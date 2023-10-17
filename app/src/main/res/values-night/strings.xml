@@ -3,5 +3,9 @@
     <string name="my_name">Prince Mahmud</string>
     <string name="designation">Mobile App Developer</string>
     <string name="my_email">princey01767@gmail.com</string>
-    <string name="my_phone">+8801767432558</string>
+    <string name="my_phone">01767432558</string>
+    <string name="contact_form">Contact Form</string>
+    <string name="enter_your_work_email">Enter Your Work Email</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="enter_your_name">Enter Your Name</string>
 </resources>

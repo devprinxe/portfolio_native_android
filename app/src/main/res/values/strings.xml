@@ -4,4 +4,38 @@
     <string name="designation">Mobile App Developer</string>
     <string name="my_email">princey01767@gmail.com</string>
     <string name="my_phone">+8801767432558</string>
+    <string name="contact_form">Contact Form</string>
+    <string name="enter_your_work_email">Enter Your Work Email</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string-array name="service_type">
+        <item>Web Development</item>
+        <item>Mobile App Development</item>
+        <item>Digital Marketing</item>
+        <item>Search Engine Optimization</item>
+    </string-array>
+    <string-array name="web_dev">
+        <item>Wordpress</item>
+        <item>Laravel</item>
+        <item>PHP</item>
+        <item>Java(Spring Boot)</item>
+    </string-array>
+    <string-array name="mobile_dev">
+        <item>Flutter</item>
+        <item>Native (Java)</item>
+        <item>Native (Kotlin)</item>
+        <item>React Native</item>
+    </string-array>
+    <string-array name="digital_marketing">
+        <item>Facebook Marketing</item>
+        <item>Twitter Marketing</item>
+        <item>Pinterest Marketing</item>
+        <item>LinkedIN Marketing</item>
+    </string-array>
+    <string-array name="seo">
+        <item>On Page SEO</item>
+        <item>Off Page SEO</item>
+        <item>Local Business Setup</item>
+        <item>Google PPC</item>
+    </string-array>
 </resources>
