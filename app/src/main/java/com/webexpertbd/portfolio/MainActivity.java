@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void contactFormRouting(View view) {
         Intent intent = new Intent(this, ContactActivity.class);
+        intent.putExtra("service", getResources().getString(R.string.contact_form));
         startActivity(intent);
     }
 }

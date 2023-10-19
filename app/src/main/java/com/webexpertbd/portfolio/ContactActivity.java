@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class ContactActivity extends AppCompatActivity {
     String service,technology,emailAddress,phoneNumber,fullName;
@@ -18,12 +19,21 @@ public class ContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
 
+        TextView textView = (TextView) findViewById(R.id.titleView);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
         EditText name = (EditText) findViewById(R.id.name);
         EditText email = (EditText) findViewById(R.id.emailAddress);
         EditText phone = (EditText) findViewById(R.id.phoneNumber);
         Button button = (Button) findViewById(R.id.sendButton);
+        Intent data = getIntent();
+        if (data != null) {
+            String receivedText = data.getStringExtra("service");
+            if (receivedText != null) {
+                textView.setText(receivedText);
+            }
+        }
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.service_type,
