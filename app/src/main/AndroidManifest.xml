@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Portfolio"
         tools:targetApi="31">
         <activity
+            android:name=".StopWatchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
