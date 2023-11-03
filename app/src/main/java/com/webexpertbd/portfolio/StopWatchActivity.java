@@ -18,7 +18,6 @@ public class StopWatchActivity extends AppCompatActivity {
     private Button startButton;
     private Button stopButton;
     private Button resetButton;
-
     private int seconds = 0;
     //Is the stopwatch running?
     private boolean running;
@@ -27,7 +26,7 @@ public class StopWatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_watch);
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
         }
@@ -38,8 +37,8 @@ public class StopWatchActivity extends AppCompatActivity {
         startButton.setOnClickListener(view -> running = true);
         stopButton.setOnClickListener(view -> running = false);
         resetButton.setOnClickListener(view -> {
-           running = false;
-           seconds = 0;
+            running = false;
+            seconds = 0;
         });
     }
 
@@ -51,14 +50,14 @@ public class StopWatchActivity extends AppCompatActivity {
     }
 
     private void runTimer() {
-        final TextView timeView = (TextView)findViewById(R.id.textView3);
+        final TextView timeView = (TextView) findViewById(R.id.textView3);
         final Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override
             public void run() {
-                int hours = seconds/3600;
-                int minutes = (seconds%3600)/60;
-                int secs = seconds%60;
+                int hours = seconds / 3600;
+                int minutes = (seconds % 3600) / 60;
+                int secs = seconds % 60;
                 String time = String.format(Locale.getDefault(),
                         "%d:%02d:%02d", hours, minutes, secs);
                 timeView.setText(time);
