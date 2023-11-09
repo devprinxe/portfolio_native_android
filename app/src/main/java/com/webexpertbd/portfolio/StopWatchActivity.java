@@ -15,10 +15,6 @@ import java.util.Locale;
 
 public class StopWatchActivity extends AppCompatActivity {
 
-    private TextView stopwatchDisplay;
-    private Button startButton;
-    private Button stopButton;
-    private Button resetButton;
     private int seconds = 0;
     //Is the stopwatch running?
     private boolean running;
@@ -27,14 +23,14 @@ public class StopWatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_watch);
-
+        Toast.makeText(this, "onCreate called", Toast.LENGTH_SHORT).show();
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
         }
-        startButton = findViewById(R.id.button);
-        stopButton = findViewById(R.id.button2);
-        resetButton = findViewById(R.id.button3);
+        Button startButton = findViewById(R.id.button);
+        Button stopButton = findViewById(R.id.button2);
+        Button resetButton = findViewById(R.id.button3);
         runTimer();
         startButton.setOnClickListener(view -> running = true);
         stopButton.setOnClickListener(view -> running = false);
@@ -47,6 +43,7 @@ public class StopWatchActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
+
         savedInstanceState.putInt("seconds", seconds);
         savedInstanceState.putBoolean("running", running);
     }
@@ -71,6 +68,34 @@ public class StopWatchActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "onStart called", Toast.LENGTH_SHORT).show();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "onResume called", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "onPause called", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(this, "onStop called", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "onDestroy called", Toast.LENGTH_SHORT).show();
+    }
 
 }

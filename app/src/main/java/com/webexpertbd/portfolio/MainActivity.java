@@ -18,19 +18,17 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button phone,email,stopwatch;
     private TextView age;
     private Handler handler;
-    private String birthdateStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toast.makeText(this, "onCreate called", Toast.LENGTH_SHORT).show();
-        phone = findViewById(R.id.phone);
-        email = findViewById(R.id.email);
-        stopwatch = findViewById(R.id.button4);
+        Button phone = findViewById(R.id.phone);
+        Button email = findViewById(R.id.email);
+        Button stopwatch = findViewById(R.id.button4);
         age = findViewById(R.id.ageCountDown);
         phone.setOnClickListener(view -> {
             Intent callIntent = new Intent(Intent.ACTION_DIAL);
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         handler = new Handler();
 
-        birthdateStr = "2000-07-01";
+        String birthdateStr = "2000-07-01";
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date birthdate = null;
